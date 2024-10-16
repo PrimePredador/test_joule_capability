@@ -3,22 +3,24 @@ parameters:
     optional: false
 
 action_groups:
-    - actions:
+  - actions:
       - type: set-variables
         scripting_type: spel
         variables:
           - name: user_reply
             value: <? response ?>
 
-    - condition: (user_reply == "yup")
-      actions:
+  - condition: (user_reply == "yup")
+    actions:
       - type: message
         message:
           type: text
-          content: "Your requirements can be effectively implemented as a BAdI Extension. \n \nFor the first requirement, a BAdI extension is already available, which can be __found__ here - BAdI Extension"
-    - condition: (user_reply == "nope")
-      actions:
+          content: "Your requirements can be effectively implemented as a BAdI Extension. \n\nFor the first requirement, a BAdI extension is already available, which can be found [here](http://www.a.com)."
+          markdown: true
+          
+  - condition: (user_reply == "nope")
+    actions:
       - type: message
         message:
           type: text
-          content: "you said no"
+          content: "You said no."

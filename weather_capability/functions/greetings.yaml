@@ -23,7 +23,7 @@ action_groups:
         message:
           type: quickReplies
           content:
-            title: Can you please confirm if this is correct?
+            title: Can you please confirm if the summary is correct?
             buttons:
               - title: Yup
                 value: Yup

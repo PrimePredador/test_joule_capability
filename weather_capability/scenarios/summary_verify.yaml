@@ -1,12 +1,13 @@
 description: |
     This scenario is used to get the user's response when they are asked to confirm if the summary is correct. 
-    The user will say "yup" / "yes" if the summarisation is correct.
-    Or they will say "nope" / "no" if the summarisation is incorrect.
+    The user will say "yup" or "yes" if the summarisation is correct.
+    Or they will say "nope" or "no" if the summarisation is incorrect.
   
 slots:  
   - name: response
-    description: response is fetched from query/app context; no input needed if absent
+    description: response is fetched from query/app context;
 
 target:
-  name: requirements
   type: function
+  name: requirements
+
