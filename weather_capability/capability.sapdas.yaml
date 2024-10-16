@@ -1,0 +1,13 @@
+metadata:
+  namespace: sap.test
+  name: praxworld
+  version: 1.0.0
+  display_name: Prax Capability
+
+
+system_aliases:
+  WeatherService: 
+    destination: WEATHER
+
+
+schema_version: 3.3.3

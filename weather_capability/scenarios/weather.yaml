@@ -1,0 +1,17 @@
+description: |
+    This scenario is used to get the details regarding the country, industry and scope from the user.
+    The user will input the details regarding the country(India, China, Egypt) along with the industry details(Public Sector, Automotive) and scope(Rebate Settlement, Grants Management).
+    The function will fetch these details from the user input and try to fill the respective function.
+
+  
+slots:  
+  - name: country
+    description: Country is fetched from query/app context; no input needed if absent
+  - name: industry
+    description: Industry is fetched from query/app context; no input needed if absent
+  - name: scope
+    description: Scope is fetched from query/app context; no input needed if absent
+
+target:
+  name: extensibility
+  type: function

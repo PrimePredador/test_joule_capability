@@ -1,0 +1,32 @@
+parameters:
+  - name: country
+    optional: true
+  - name: industry
+    optional: true
+  - name: scope
+    optional: true
+
+action_groups:
+    - actions:
+      - type: set-variables
+        scripting_type: spel
+        variables:
+          - name: country_name
+            value: <? country ?>
+      - type: set-variables
+        scripting_type: spel
+        variables:
+          - name: industry_type
+            value: <? industry ?>            
+      - type: set-variables
+        scripting_type: spel
+        variables:
+          - name: scope_level
+            value: <? scope ?>
+
+    - condition: (country_name != null or scope_level != null or industry_type != null)
+      actions:
+      - type: message
+        message:
+          type: text
+          content: "Country is <? country_name ?>, Industry is <? industry_type ?>, scope type is <? scope_level ?>"

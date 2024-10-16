@@ -1,0 +1,33 @@
+parameters:
+  - name: greet
+    optional: false
+
+action_groups:
+    # Set the greeting message based on the reply
+   - actions:
+      - type: message 
+        message: 
+          type: text
+          content: "Hi I am your AI enabled assistant \n            
+                    Thank you for providing your request. \n
+                    Based on your inputs, please find below a summary of your requirement" 
+          markdown: false
+          delay: 4   
+      - type: message 
+        message: 
+          type: text
+          content: "Summary - \n 1. If a subcontractor lowers the unit price, it can't be applied to past orders. The price difference for existing orders must stay the same. \n \n 2. When setting the delivery schedule date, consider the plant's factory calendar. In Japan, public holidays are on February 11 and 23, which should be factored into the delivery planning." 
+          markdown: false
+          delay: 2      
+      - type: message
+        message:
+          type: quickReplies
+          content:
+            title: Can you please confirm if this is correct?
+            buttons:
+              - title: Yup
+                value: Yup
+              - title: Nope
+                value: Nope
+
+                  #  \n for line break

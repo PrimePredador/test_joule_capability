@@ -1,0 +1,10 @@
+description: |
+  This scenario is used to get the greeting(Good morning, Hi, Hello, Namaskara) from the user. The user can also ask any questions and can also just use a question mark. The function is used to handle the data input from the user to provide a detail regarding the selection of data.
+
+slots:
+  - name: greet
+    description: This is any input done by the user just after the initial launch
+
+target:
+ type: function
+ name: greetings

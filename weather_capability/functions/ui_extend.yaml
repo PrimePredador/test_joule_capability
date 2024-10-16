@@ -1,0 +1,11 @@
+parameters:
+  - name: ui_var
+    optional: false
+
+action_groups:
+   - actions:
+       - type: message
+         message:
+          type: text
+          content: "4. UI Adaptations \n
+                    The following are the details for the UI adaptations" 
