@@ -1,7 +1,7 @@
 description: |
     This scenario is used to get the user's response when they are asked to confirm if the summary is correct. 
-    The user will say "yup" or "yes" if the summarisation is correct.
-    Or they will say "nope" or "no" if the summarisation is incorrect.
+    The user will say "Yup" or "Yes" if the summarisation is correct.
+    Or they will say "Nope" or "No" if the summarisation is incorrect.
   
 slots:  
   - name: response

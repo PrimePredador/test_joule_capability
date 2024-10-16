@@ -1,0 +1,13 @@
+description: |
+    This scenario is used to get the user's response when they are asked to create a request. 
+    The user will say "Yeah" or "Yes" if they want to create a request.
+    Or they will say "Nah" or "No" if they do not want to create a request.
+  
+slots:  
+  - name: response
+    description: response is fetched from query/app context;
+
+target:
+  type: function
+  name: request_creation
+

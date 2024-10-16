@@ -10,51 +10,36 @@ action_groups:
           - name: user_reply
             value: <? response ?>
 
-  - condition: (user_reply == "Yup")
-    actions:
-    - type: message
-      message:
-        type: text
-        content: "Your requirements can be effectively implemented as a BAdI Extension. \n\nFor the first requirement, a BAdI extension is already available, which can be found [here](http://www.a.com)."
-        markdown: true
-        delay : 2
-    - type: message
-      message:
-        type: text
-        content: "For the second requirement, we do not have a BAdI extension available yet, you can raise a request for the same.\n\nOur concerned team will reach out to you to get more details and to decide if it can be taken as an enhancement."
-        markdown: false
-    - type: message
-      message:
-        type: quickReplies
-        content:
-          title: Do you want me to create a request?
-          buttons:
-            - title: Yeah
-              value: Yeah
-            - title: Nah
-              value: Nah
-          
-  - condition: (user_reply == "Nope")
+  - condition: (user_reply == "Yeah")
     actions:
       - type: message
         message:
           type: text
-          content: "How dare you to say NO!\n I've summarised it with a lot of hard work"
+          content: "New request has been created for you.\n\nRequest details can be found here: [Your request for new Enhancement](http://www.a.com)."
+          markdown: true
+          delay : 2
+          
+  - condition: (user_reply == "Nah")
+    actions:
+      - type: message
+        message:
+          type: text
+          content: "How dare you to say NO!"
 
-#payload response in case of successfully identifying "Yup" scenario
+# payload response in case of successfully identifying "Yup" scenario
 # {
-#   "id": "1729094889482.01",
+#   "id": "1729095013398.01",
 #   "attachment": {
 #     "type": "text",
-#     "content": "Your requirements can be effectively implemented as a BAdI Extension. \n\nFor the first requirement, a BAdI extension is already available, which can be found [here](http://www.a.com).",
+#     "content": "New request has been created for you.\n\nRequest details can be found here: [Your request for new Enhancement](http://www.a.com).",
 #     "markdown": true,
 #     "delay": 2
 #   },
+#   "receivedAt": "2024-10-16T16:10:13.394Z",
 #   "participant": {
 #     "isBot": true,
 #     "senderId": "naa_capability"
 #   },
-#   "receivedAt": "2024-10-16T16:08:09.480Z",
 #   "logs": [
 #     {
 #       "level": "info",
@@ -106,7 +91,7 @@ action_groups:
 #           "chunkMetadata": []
 #         }
 #       ],
-#       "timestamp": 1729094887700
+#       "timestamp": 1729095011605
 #     },
 #     {
 #       "level": "info",
@@ -116,11 +101,11 @@ action_groups:
 #       "data": [
 #         {
 #           "capability_name": "praxworld",
-#           "scenario_name": "summary_verify"
+#           "scenario_name": "request_creation"
 #         },
 #         {
 #           "capability_name": "praxworld",
-#           "scenario_name": "request_creation"
+#           "scenario_name": "summary_verify"
 #         },
 #         {
 #           "capability_name": "praxworld",
@@ -131,7 +116,7 @@ action_groups:
 #           "scenario_name": "weather"
 #         }
 #       ],
-#       "timestamp": 1729094888264
+#       "timestamp": 1729095012131
 #     },
 #     {
 #       "level": "info",
@@ -180,43 +165,6 @@ action_groups:
 #                   ],
 #                   "documents": [
 #                     {
-#                       "id": "0f077c8d-32c6-4c6b-bc48-160f727e704e",
-#                       "metadata": [
-#                         {
-#                           "key": "scenario_name",
-#                           "value": [
-#                             "summary_verify"
-#                           ]
-#                         },
-#                         {
-#                           "key": "capability_name",
-#                           "value": [
-#                             "praxworld"
-#                           ]
-#                         },
-#                         {
-#                           "key": "capability_namespace",
-#                           "value": [
-#                             "sap.test"
-#                           ]
-#                         }
-#                       ],
-#                       "chunks": [
-#                         {
-#                           "id": "0b871d86-5e39-49bc-99d1-a4a4542c6bed",
-#                           "content": "This scenario is used to get the user's response when they are asked to confirm if the summary is correct. \nThe user will say \"Yup\" or \"Yes\" if the su",
-#                           "metadata": [
-#                             {
-#                               "key": "sap.document-grounding/language",
-#                               "value": [
-#                                 "en"
-#                               ]
-#                             }
-#                           ]
-#                         }
-#                       ]
-#                     },
-#                     {
 #                       "id": "984fb2cf-3e90-421c-9fe5-9efe958c48e6",
 #                       "metadata": [
 #                         {
@@ -242,6 +190,43 @@ action_groups:
 #                         {
 #                           "id": "5948bfa9-9dc3-4591-b43f-4fb453dc419c",
 #                           "content": "This scenario is used to get the user's response when they are asked to create a request. \nThe user will say \"Yeah\" or \"Yes\" if they want to create a ",
+#                           "metadata": [
+#                             {
+#                               "key": "sap.document-grounding/language",
+#                               "value": [
+#                                 "en"
+#                               ]
+#                             }
+#                           ]
+#                         }
+#                       ]
+#                     },
+#                     {
+#                       "id": "0f077c8d-32c6-4c6b-bc48-160f727e704e",
+#                       "metadata": [
+#                         {
+#                           "key": "scenario_name",
+#                           "value": [
+#                             "summary_verify"
+#                           ]
+#                         },
+#                         {
+#                           "key": "capability_name",
+#                           "value": [
+#                             "praxworld"
+#                           ]
+#                         },
+#                         {
+#                           "key": "capability_namespace",
+#                           "value": [
+#                             "sap.test"
+#                           ]
+#                         }
+#                       ],
+#                       "chunks": [
+#                         {
+#                           "id": "0b871d86-5e39-49bc-99d1-a4a4542c6bed",
+#                           "content": "This scenario is used to get the user's response when they are asked to confirm if the summary is correct. \nThe user will say \"Yup\" or \"Yes\" if the su",
 #                           "metadata": [
 #                             {
 #                               "key": "sap.document-grounding/language",
@@ -335,7 +320,7 @@ action_groups:
 #           }
 #         ]
 #       },
-#       "timestamp": 1729094888265
+#       "timestamp": 1729095012131
 #     },
 #     {
 #       "level": "info",
@@ -346,38 +331,38 @@ action_groups:
 #           "name": "praxworld",
 #           "namespace": "sap.test"
 #         },
-#         "scenario_name": "summary_verify"
+#         "scenario_name": "request_creation"
 #       },
 #       "data": {},
-#       "timestamp": 1729094888785
+#       "timestamp": 1729095012541
 #     },
 #     {
 #       "level": "info",
 #       "code": "SCENARIO_EXECUTED_WITH_PARAMETERS",
-#       "message": "The scenario summary_verify is called with parameters",
+#       "message": "The scenario request_creation is called with parameters",
 #       "context": {
 #         "capability": {
 #           "name": "praxworld",
 #           "namespace": "sap.test"
 #         },
-#         "scenario_name": "summary_verify"
+#         "scenario_name": "request_creation"
 #       },
 #       "data": {
-#         "response": "Yup"
+#         "response": "Yeah"
 #       },
-#       "timestamp": 1729094889281
+#       "timestamp": 1729095013093
 #     },
 #     {
 #       "level": "info",
 #       "code": "DIALOG_FUNCTION_STARTED",
-#       "message": "Dialog function requirements started",
+#       "message": "Dialog function request_creation started",
 #       "context": {
 #         "capability": {
 #           "name": "praxworld",
 #           "namespace": "sap.test"
 #         },
-#         "scenario_name": "summary_verify",
-#         "dialog_function_name": "requirements"
+#         "scenario_name": "request_creation",
+#         "dialog_function_name": "request_creation"
 #       },
 #       "data": {
 #         "parameters": {
@@ -398,30 +383,31 @@ action_groups:
 #               "email": "sai.satya.vara.prakash.rapeti@sap.com"
 #             }
 #           },
-#           "response": "Yup"
+#           "response": "Yeah"
 #         }
 #       },
-#       "timestamp": 1729094889356
+#       "timestamp": 1729095013153
 #     },
 #     {
 #       "level": "info",
 #       "code": "DIALOG_FUNCTION_FINISHED",
-#       "message": "Dialog function requirements finished",
+#       "message": "Dialog function request_creation finished",
 #       "context": {
 #         "capability": {
 #           "name": "praxworld",
 #           "namespace": "sap.test"
 #         },
-#         "scenario_name": "summary_verify",
-#         "dialog_function_name": "requirements"
+#         "scenario_name": "request_creation",
+#         "dialog_function_name": "request_creation"
 #       },
 #       "data": {
 #         "results": {}
 #       },
-#       "timestamp": 1729094889364
+#       "timestamp": 1729095013158
 #     }
 #   ],
 #   "debug": {
-#     "correlationId": "c2475439-1bde-45e2-916a-a7ce9e80fd07"
+#     "correlationId": "37785d0c-f134-4d1a-9f9f-7450f2caa30f"
 #   }
 # }
+
